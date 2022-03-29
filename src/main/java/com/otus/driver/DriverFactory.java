@@ -1,0 +1,28 @@
+package com.otus.driver;
+
+import com.otus.driver.impl.ChromeWebDriver;
+import com.otus.exceptions.DriverTypeNotSupported;
+import org.openqa.selenium.WebDriver;
+
+import java.util.Locale;
+
+public class DriverFactory implements IDriverFactory {
+
+  private String browserType = System.getProperty("browser").toLowerCase(Locale.ROOT);
+
+  @Override
+  public WebDriver getDriver() {
+    switch (this.browserType) {
+      case "chrome": {
+        return new ChromeWebDriver().newDriver();
+      }
+      default:
+        try {
+          throw new DriverTypeNotSupported(this.browserType);
+        } catch (DriverTypeNotSupported ex) {
+          ex.printStackTrace();
+          return null;
+        }
+    }
+  }
+}
