@@ -1,0 +1,6 @@
+com/otus/hooks/Hooks.class
+com/otus/steps/components/NavigationMenuSteps.class
+com/otus/steps/common/CommonPageSteps.class
+com/otus/steps/pages/CategoryLessonPageSteps.class
+com/otus/steps/pages/MainPageSteps.class
+com/otus/Runner_Test.class

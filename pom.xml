@@ -14,6 +14,7 @@
 
         <webdriver.manager>4.2.0</webdriver.manager>
 
+        <browser>chrome</browser>
         <base.url/>
     </properties>
 
@@ -50,6 +51,17 @@
             <artifactId>cucumber-java</artifactId>
             <version>5.5.0</version>
         </dependency>
+
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-guice</artifactId>
+            <version>5.5.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.google.inject</groupId>
+            <artifactId>guice</artifactId>
+            <version>5.1.0</version>
+        </dependency>
     </dependencies>
 
     <profiles>
@@ -76,7 +88,7 @@
                 <configuration>
                     <systemProperties>
                         <base.url>${base.url}</base.url>
-                        <browser>chrome</browser>
+                        <browser>${browser}</browser>
                     </systemProperties>
                 </configuration>
             </plugin>

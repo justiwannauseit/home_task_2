@@ -2,14 +2,15 @@ package com.otus.components;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
+import support.GuiceScoped;
 
 public abstract class BaseComponent<T> {
 
-  protected WebDriver driver;
+  protected GuiceScoped guiceScoped;
 
-  public BaseComponent(WebDriver driver) {
-    PageFactory.initElements(driver, this);
-    this.driver = driver;
+  public BaseComponent(GuiceScoped guiceScoped) {
+    PageFactory.initElements(guiceScoped.driver, this);
+    this.guiceScoped = guiceScoped;
   }
 
 }
