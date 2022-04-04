@@ -2,7 +2,6 @@ package com.otus.hooks;
 
 import com.google.inject.Inject;
 import io.cucumber.java.After;
-import io.cucumber.java.Before;
 import support.GuiceScoped;
 
 public class Hooks {

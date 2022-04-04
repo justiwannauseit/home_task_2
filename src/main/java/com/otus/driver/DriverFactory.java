@@ -1,13 +1,12 @@
 package com.otus.driver;
 
 import com.google.inject.Inject;
-import com.otus.driver.impl.ChromeWebDriver;
+import com.otus.driver.impl.ChromeCustomDriver;
+import com.otus.driver.impl.FirefoxCustomDriver;
+import com.otus.driver.impl.OperaCustomDriver;
 import com.otus.exceptions.DriverTypeNotSupported;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.safari.SafariDriver;
 import support.GuiceScoped;
-
-import java.util.Locale;
 
 public class DriverFactory implements IDriverFactory {
 
@@ -21,19 +20,22 @@ public class DriverFactory implements IDriverFactory {
   @Override
   public WebDriver getDriver() {
     switch (guiceScoped.browserName) {
-      case "chrome": {
-        return new ChromeWebDriver().newDriver();
-      }
-      case "safari": {
-        return new SafariDriver();
-      }
-      default:
-        try {
-          throw new DriverTypeNotSupported(guiceScoped.browserName);
-        } catch (DriverTypeNotSupported ex) {
-          ex.printStackTrace();
-          return null;
+        case "chrome": {
+            return new ChromeCustomDriver().newDriver();
         }
+        case "opera": {
+            return new OperaCustomDriver().newDriver();
+        }
+        case "firefox": {
+            return new FirefoxCustomDriver().newDriver();
+        }
+        default:
+            try {
+                throw new DriverTypeNotSupported(guiceScoped.browserName);
+            } catch (DriverTypeNotSupported ex) {
+                ex.printStackTrace();
+                return null;
+            }
     }
   }
 }

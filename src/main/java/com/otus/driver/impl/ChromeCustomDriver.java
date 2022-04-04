@@ -12,7 +12,7 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 
 import java.util.logging.Level;
 
-public class ChromeWebDriver implements IDriver {
+public class ChromeCustomDriver implements IDriver {
 
   @Override
   public WebDriver newDriver() {
