@@ -10,32 +10,38 @@ import support.GuiceScoped;
 
 public class DriverFactory implements IDriverFactory {
 
-  public GuiceScoped guiceScoped;
+    public GuiceScoped guiceScoped;
 
-  @Inject
-  public DriverFactory(GuiceScoped guiceScoped) {
-    this.guiceScoped = guiceScoped;
-  }
-
-  @Override
-  public WebDriver getDriver() {
-    switch (guiceScoped.browserName) {
-        case "chrome": {
-            return new ChromeCustomDriver().newDriver();
-        }
-        case "opera": {
-            return new OperaCustomDriver().newDriver();
-        }
-        case "firefox": {
-            return new FirefoxCustomDriver().newDriver();
-        }
-        default:
-            try {
-                throw new DriverTypeNotSupported(guiceScoped.browserName);
-            } catch (DriverTypeNotSupported ex) {
-                ex.printStackTrace();
-                return null;
-            }
+    @Inject
+    public DriverFactory(GuiceScoped guiceScoped) {
+        this.guiceScoped = guiceScoped;
     }
-  }
+
+    @Override
+    public WebDriver getDriver() {
+        switch (guiceScoped.browserName) {
+            case "chrome": {
+                return new ChromeCustomDriver().newDriver();
+            }
+            case "opera": {
+                return new OperaCustomDriver().newDriver();
+            }
+            case "firefox": {
+                return new FirefoxCustomDriver().newDriver();
+            }
+            default:
+                try {
+                    throw new DriverTypeNotSupported(guiceScoped.browserName);
+                } catch (DriverTypeNotSupported ex) {
+                    ex.printStackTrace();
+                    return null;
+                }
+        }
+    }
+
+    public void configureDriver(WebDriver driver) {
+        driver.manage().window().maximize();
+        driver.manage().deleteAllCookies();
+    }
+
 }

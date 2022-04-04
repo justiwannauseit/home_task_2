@@ -1,6 +1,7 @@
 package com.otus.components;
 
 import com.google.inject.Inject;
+import lombok.extern.java.Log;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -13,6 +14,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
+@Log
 public class NavigationMenuComponent extends BaseComponent<NavigationMenuComponent> {
 
     @FindBy(css = ".nav:not(.hide-xs) .course-categories__nav-box")
@@ -43,7 +45,7 @@ public class NavigationMenuComponent extends BaseComponent<NavigationMenuCompone
 
     public void getInfoAboutCoursesAfterDate(String value) {
         List<WebElement> datesAfter = filterElementsViaPredicate(getAllCourses(), CustomSorter.filterAfterDate(CustomDataFormatter.stringDateToData(value)));
-        datesAfter.forEach(webElement -> System.out.println(guiceScoped.driver.findElement(By.xpath(String.format(LESSON_NAME, webElement.getText()))).getText()));
+        datesAfter.forEach(webElement -> log.info(guiceScoped.driver.findElement(By.xpath(String.format(LESSON_NAME, webElement.getText()))).getText()));
     }
 
 

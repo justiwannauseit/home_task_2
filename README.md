@@ -10,3 +10,9 @@
 ```
     git clone https://github.com/justiwannauseit/home_task_2 
 ```
+
+### Run in console
+
+```
+    mvn test -Dcucumber.filter.tags=@smoke
+```

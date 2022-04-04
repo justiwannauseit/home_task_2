@@ -1,11 +1,13 @@
 package pages;
 
 import actions.CommonActions;
+import lombok.extern.java.Log;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import support.GuiceScoped;
 
+@Log
 public abstract class BasePage<T> extends CommonActions<T> {
 
     private String path;

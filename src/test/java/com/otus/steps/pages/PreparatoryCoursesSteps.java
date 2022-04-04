@@ -2,8 +2,10 @@ package com.otus.steps.pages;
 
 import com.google.inject.Inject;
 import io.cucumber.java.ru.Затем;
+import lombok.extern.java.Log;
 import pages.PreparatoryCourses;
 
+@Log
 public class PreparatoryCoursesSteps {
 
     @Inject
@@ -13,11 +15,11 @@ public class PreparatoryCoursesSteps {
     public void printInfoAboutTheMostExpensiveOrCheapCourse(String param) {
         switch (param) {
             case "дешевом":
-                System.out.println("-----> Самый дешевый курс:");
+                log.info("-----> Самый дешевый курс:");
                 preparatoryCourses.printToCheapCourse();
                 break;
             case "дорогом":
-                System.out.println("-----> Самый дорогой курс:");
+                log.info("-----> Самый дорогой курс:");
                 preparatoryCourses.printToExpensiveCourse();
                 break;
         }

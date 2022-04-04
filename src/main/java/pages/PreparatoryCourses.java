@@ -1,6 +1,7 @@
 package pages;
 
 import com.google.inject.Inject;
+import lombok.extern.java.Log;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -10,6 +11,7 @@ import utill.CustomSorter;
 import java.util.List;
 import java.util.stream.Collectors;
 
+@Log
 public class PreparatoryCourses extends BasePage<PreparatoryCourses> {
 
 
@@ -27,20 +29,20 @@ public class PreparatoryCourses extends BasePage<PreparatoryCourses> {
         List<WebElement> elements = sortElementsViaComparator(prices, CustomSorter.sortWebElementsByPrice);
         List<WebElement> filteredElements = elements.stream().filter(element -> !element.getText().contains(elements.get(0).getText())).collect(Collectors.toList());
         if (filteredElements.isEmpty()) {
-            System.out.println("Среди всех курсов нет самого дешевого");
+            log.info("Среди всех курсов нет самого дешевого");
             return;
         }
-        filteredElements.forEach(webElement -> System.out.println("Самые дешевые курсы: " + guiceScoped.driver.findElement(By.xpath(String.format(COURSES_BY_TEXT, webElement.getText()))).getText()));
+        filteredElements.forEach(webElement -> log.info("Самые дешевые курсы: " + guiceScoped.driver.findElement(By.xpath(String.format(COURSES_BY_TEXT, webElement.getText()))).getText()));
     }
 
     public void printToExpensiveCourse() {
         List<WebElement> elements = sortElementsViaComparator(prices, CustomSorter.sortWebElementsByPrice);
         List<WebElement> filteredElements = elements.stream().filter(element -> !element.getText().contains(elements.get(elements.size() - 1).getText())).collect(Collectors.toList());
         if (filteredElements.isEmpty()) {
-            System.out.println("Среди всех курсов нет самого дорого");
+            log.info("Среди всех курсов нет самого дорого");
             return;
         }
-        filteredElements.forEach(webElement -> System.out.println("Самые дорогие курсы: " + guiceScoped.driver.findElement(By.xpath(String.format(COURSES_BY_TEXT, webElement.getText()))).getText()));
+        filteredElements.forEach(webElement -> log.info("Самые дорогие курсы: " + guiceScoped.driver.findElement(By.xpath(String.format(COURSES_BY_TEXT, webElement.getText()))).getText()));
     }
 
 }

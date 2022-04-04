@@ -4,7 +4,6 @@ import com.google.inject.Inject;
 import com.otus.driver.DriverFactory;
 import io.cucumber.java.ru.Пусть;
 import io.cucumber.java.ru.Тогда;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
 import pages.MainPage;
 import support.GuiceScoped;
@@ -23,18 +22,13 @@ public class MainPageSteps {
         guiceScoped.browserName = browserName;
         guiceScoped.driver = driverFactory.getDriver();
         guiceScoped.actions = new Actions(guiceScoped.driver);
-        configureDriver(guiceScoped.driver);
+        driverFactory.configureDriver(guiceScoped.driver);
         mainPage.open();
     }
 
     @Тогда("Главная страница открыта и заголовок {string}")
     public void pageShouldBeOpened(String expectedHeader) {
         mainPage.pageHeaderShouldBeSameAs(expectedHeader);
-    }
-
-    private void configureDriver(WebDriver driver) {
-        driver.manage().window().maximize();
-        driver.manage().deleteAllCookies();
     }
 
 }
