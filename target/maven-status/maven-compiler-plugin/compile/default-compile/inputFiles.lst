@@ -1,12 +1,20 @@
-/Users/p.balahonov/IdeaProjects/Java-qa-pro/src/main/java/com/otus/driver/impl/IDriver.java
-/Users/p.balahonov/IdeaProjects/Java-qa-pro/src/main/java/com/otus/components/BaseComponent.java
-/Users/p.balahonov/IdeaProjects/Java-qa-pro/src/main/java/support/GuiceScoped.java
-/Users/p.balahonov/IdeaProjects/Java-qa-pro/src/main/java/com/otus/driver/DriverFactory.java
-/Users/p.balahonov/IdeaProjects/Java-qa-pro/src/main/java/com/otus/components/NavigationMenuComponent.java
-/Users/p.balahonov/IdeaProjects/Java-qa-pro/src/main/java/pages/CategoryLessonsPage.java
-/Users/p.balahonov/IdeaProjects/Java-qa-pro/src/main/java/com/otus/dobj/Category.java
-/Users/p.balahonov/IdeaProjects/Java-qa-pro/src/main/java/com/otus/driver/impl/ChromeWebDriver.java
-/Users/p.balahonov/IdeaProjects/Java-qa-pro/src/main/java/pages/BasePage.java
-/Users/p.balahonov/IdeaProjects/Java-qa-pro/src/main/java/com/otus/driver/IDriverFactory.java
-/Users/p.balahonov/IdeaProjects/Java-qa-pro/src/main/java/pages/MainPage.java
-/Users/p.balahonov/IdeaProjects/Java-qa-pro/src/main/java/com/otus/exceptions/DriverTypeNotSupported.java
+D:\IDEAPROJECTS\Java donor\src\main\java\com\otus\driver\impl\ChromeCustomDriver.java
+D:\IDEAPROJECTS\Java donor\src\main\java\com\otus\exceptions\DriverTypeNotSupported.java
+D:\IDEAPROJECTS\Java donor\src\main\java\com\otus\driver\impl\FirefoxCustomDriver.java
+D:\IDEAPROJECTS\Java donor\src\main\java\com\otus\driver\impl\IDriver.java
+D:\IDEAPROJECTS\Java donor\src\main\java\utill\CustomSorter.java
+D:\IDEAPROJECTS\Java donor\src\main\java\com\otus\dobj\Category.java
+D:\IDEAPROJECTS\Java donor\src\main\java\actions\CommonActions.java
+D:\IDEAPROJECTS\Java donor\src\main\java\pages\BasePage.java
+D:\IDEAPROJECTS\Java donor\src\main\java\com\otus\components\NavigationMenuComponent.java
+D:\IDEAPROJECTS\Java donor\src\main\java\com\otus\driver\DriverFactory.java
+D:\IDEAPROJECTS\Java donor\src\main\java\com\otus\driver\impl\OperaCustomDriver.java
+D:\IDEAPROJECTS\Java donor\src\main\java\com\otus\driver\IDriverFactory.java
+D:\IDEAPROJECTS\Java donor\src\main\java\com\otus\components\BaseComponent.java
+D:\IDEAPROJECTS\Java donor\src\main\java\support\GuiceScoped.java
+D:\IDEAPROJECTS\Java donor\src\main\java\pages\MainPage.java
+D:\IDEAPROJECTS\Java donor\src\main\java\utill\CustomDataFormatter.java
+D:\IDEAPROJECTS\Java donor\src\main\java\popups\Cookies.java
+D:\IDEAPROJECTS\Java donor\src\main\java\pages\PreparatoryCourses.java
+D:\IDEAPROJECTS\Java donor\src\main\java\pages\CategoryLessonsPage.java
+D:\IDEAPROJECTS\Java donor\src\main\java\popups\AnyPopupAbs.java
